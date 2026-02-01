@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id ("kotlin-kapt")
 }
 
 android {
@@ -57,4 +58,24 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+
+    // ArchLifecycle
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    kapt ("androidx.lifecycle:lifecycle-compiler:2.2.0")
+//Retrofit2
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+//Kotlin Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+// Retrofit2-Gson
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+// Coil
+    implementation("io.coil-kt:coil-compose:2.7.0")
+
+    // Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.7.7")
 }
